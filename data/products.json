@@ -1,0 +1,64 @@
+[
+  {
+    "product_id": "PRD-001",
+    "name": "Organic Green Tea",
+    "category": "Beverages",
+    "price": 850,
+    "quantity": 18,
+    "reorder_level": 10,
+    "description": "Loose-leaf green tea.",
+    "product_type": "standard"
+  },
+  {
+    "product_id": "PRD-002",
+    "name": "Ceramic Coffee Mug",
+    "category": "Kitchenware",
+    "price": 650,
+    "quantity": 6,
+    "reorder_level": 8,
+    "description": "Reusable ceramic mug.",
+    "product_type": "standard"
+  },
+  {
+    "product_id": "PRD-003",
+    "name": "Almond Milk",
+    "category": "Dairy Alternatives",
+    "price": 520,
+    "quantity": 0,
+    "reorder_level": 12,
+    "description": "Plant-based milk alternative.",
+    "product_type": "perishable",
+    "expiry_date": "2026-12-20"
+  },
+  {
+    "product_id": "PRD-004",
+    "name": "Oat Cookies",
+    "category": "Snacks",
+    "price": 300,
+    "quantity": 24,
+    "reorder_level": 10,
+    "description": "Packaged oat cookies.",
+    "product_type": "standard"
+  },
+  {
+    "product_id": "PRD-005",
+    "name": "Fresh Orange Juice",
+    "category": "Beverages",
+    "price": 450,
+    "quantity": 4,
+    "reorder_level": 8,
+    "description": "Fresh bottled orange juice.",
+    "product_type": "perishable",
+    "expiry_date": "2026-11-25"
+  },
+  {
+    "product_id": "PRD-007",
+    "name": "note book",
+    "category": "Stationery",
+    "price": 200.0,
+    "quantity": 15,
+    "reorder_level": 5,
+    "description": "Sample notebook",
+    "product_type": "standard"
+  }
+]

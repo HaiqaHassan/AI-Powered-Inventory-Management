@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verdant | AI Inventory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head><body><div class="layout">
+<aside class="sidebar"><a class="brand" href="/">V <span>verdant<small>INVENTORY INTELLIGENCE</small></span></a>
+<p class="side-label">WORKSPACE</p><a class="nav active" href="#overview">▦ &nbsp; Overview</a>
+<a class="nav" href="#products">▤ &nbsp; Products</a><a class="nav" href="#intelligence">✧ &nbsp; AI Intelligence</a>
+<div class="side-note"><b>Thoughtful stock decisions.</b><p>Keep your inventory balanced, visible and ready for what's next.</p></div>
+<small class="side-foot">SMARTER STOCK. CALMER BUSINESS.</small></aside>
+<main><header class="top"><div><small class="eyebrow">INVENTORY WORKSPACE</small><h1>Good day<span>.</span></h1><p>Here's what's happening with your inventory.</p></div><button class="btn" id="addTopBtn">＋ Add product</button></header>
+<section id="overview"><div class="section-title"><div><small class="eyebrow">AT A GLANCE</small><h2>Overview</h2></div><small id="todayLabel"></small></div>
+<div class="stats">
+<article><small>Total products</small><strong id="statProducts">0</strong><em>Unique product records</em></article>
+<article><small>Available units</small><strong id="statUnits">0</strong><em>Units across your catalog</em></article>
+<article><small>Inventory value</small><strong id="statValue">PKR 0</strong><em>Current quantity × price</em></article>
+<article><small>Low stock</small><strong id="statLow">0</strong><em>At or below reorder level</em></article>
+<article><small>Out of stock</small><strong id="statOut">0</strong><em>Products needing attention</em></article></div></section>
+<section class="columns" id="products"><div class="panel"><div class="section-title"><div><small class="eyebrow">YOUR CATALOG</small><h2>Product inventory</h2></div><small id="productCount">0 items</small></div>
+<div class="toolbar"><input id="searchInput" placeholder="Search name, ID or category..."><button class="light-btn" id="refreshBtn">↻ Refresh</button></div>
+<div class="table-scroll"><table><thead><tr><th>PRODUCT</th><th>PRICE</th><th>QTY</th><th>STATUS</th><th>VALUE</th><th></th></tr></thead><tbody id="productRows"><tr><td colspan="6">Loading...</td></tr></tbody></table></div></div>
+<aside class="panel form-panel"><small class="eyebrow">CATALOG MANAGEMENT</small><h2 id="formTitle">Add a product</h2>
+<form id="productForm"><label>Product ID<input id="product_id" name="product_id" placeholder="PRD-006" required></label>
+<label>Product name<input id="name" name="name" required></label>
+<div class="two"><label>Category<input id="category" name="category" required></label><label>Type<select id="product_type" name="product_type"><option value="standard">Standard</option><option value="perishable">Perishable</option></select></label></div>
+<div class="two"><label>Price (PKR)<input id="price" name="price" type="number" min="0" step=".01" required></label><label>Quantity<input id="quantity" name="quantity" type="number" min="0" required></label></div>
+<div class="two"><label>Reorder level<input id="reorder_level" name="reorder_level" type="number" min="0" value="5" required></label><label id="expiryWrap" class="hidden">Expiry date<input id="expiry_date" name="expiry_date" type="date"></label></div>
+<label>Description<textarea id="description" name="description" rows="3"></textarea></label>
+<button type="button" class="ai-link" id="descriptionBtn">✧ Generate description with AI</button>
+<div class="form-buttons"><button class="btn" id="saveBtn">Save product</button><button type="button" class="light-btn hidden" id="cancelEdit">Cancel</button></div></form></aside></section>
+<section class="panel ai-panel" id="intelligence"><div class="ai-head"><div><small class="eyebrow">GROQ-POWERED ASSISTANT</small><h2>Inventory intelligence</h2><p>Turn your stock records into clear, practical next steps.</p></div><span class="ai-badge">✧ AI INSIGHTS</span></div>
+<div class="ai-actions"><button id="analyzeBtn"><b>✧ &nbsp; AI inventory analysis</b><small>Understand your current stock health</small></button><button id="reorderBtn"><b>↗ &nbsp; Smart reorder suggestions</b><small>Prioritize products that need restocking</small></button></div>
+<div id="aiResult" class="result hidden"><b id="resultTitle"></b><button id="closeResult">×</button><pre id="resultBody"></pre></div>
+<div class="assistant"><small>✧ &nbsp; ASK YOUR INVENTORY ASSISTANT</small><form id="askForm"><input id="questionInput" maxlength="600" placeholder="Ask something about your inventory..." required><button class="btn">Ask AI ↗</button></form>
+<div class="chips"><button type="button" data-question="Which products are running low?">Which products are running low?</button><button type="button" data-question="Which products are out of stock?">What's out of stock?</button><button type="button" data-question="What is the total inventory value?">Total inventory value?</button></div></div>
+<p class="footnote">AI responses are suggestions based on saved records. Verify recommendations before purchasing.</p></section>
+<footer>VERDANT INVENTORY · BUILT FOR CLEARER STOCK DECISIONS</footer></main></div>
+<div class="toast" id="toast"></div><script src="{{ url_for('static', filename='app.js') }}"></script></body></html>
